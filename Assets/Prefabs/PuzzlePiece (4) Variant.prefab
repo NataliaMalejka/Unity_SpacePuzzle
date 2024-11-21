@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuzzlePiece (4) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1743678292822686681, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743678292822686681, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
+      propertyPath: tileOffset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4920619884708602219, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -22,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 1308172194, guid: d88381868633dcd45af7c1665aa7d2d7, type: 3}
     - target: {fileID: 7317746309113491652, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7317746309113491652, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.969
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7317746309113491652, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
       propertyPath: m_LocalPosition.z
