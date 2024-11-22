@@ -9,6 +9,8 @@ public class Puzzle : MonoBehaviour
     [SerializeField, Tooltip("The type of connection on each side of the puzzle piece. (Can be either 'Hole' or 'Knob')")]
     Connection[] connections = new Connection[4];
 
+    [SerializeField] private bool portable;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

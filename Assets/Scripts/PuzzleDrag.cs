@@ -3,6 +3,7 @@ using UnityEngine;
 public class PuzzleDrag : MonoBehaviour
 {
     private GameObject selectedPiece; // Aktualnie wybrany puzzel
+    private GameObject pieceImage;
     private Vector3 offset; // Ró¿nica miêdzy pozycj¹ myszy a puzzlem
     private float zPosition = 0f; // Zawsze 0, aby pozostaæ w jednej p³aszczyŸnie
 
@@ -23,7 +24,9 @@ public class PuzzleDrag : MonoBehaviour
             {
                 selectedPiece = hit.collider.gameObject;
                 offset = selectedPiece.transform.position - (Vector3)mousePosition;
-                SetOrderInLayer(selectedPiece, 10); // Wy¿szy order in layer, by wyœwietlaæ puzzel na wierzchu
+                pieceImage = selectedPiece.transform.GetChild(0).gameObject;
+                SetOrderInLayer(selectedPiece, 1); // Wy¿szy order in layer, by wyœwietlaæ puzzel na wierzchu
+                SetOrderInLayer(pieceImage, 1);
             }
         }
 
@@ -38,7 +41,9 @@ public class PuzzleDrag : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && selectedPiece != null)
         {
             SetOrderInLayer(selectedPiece, 0); // Przywróæ pierwotny order in layer
+            SetOrderInLayer(pieceImage, 0);
             selectedPiece = null;
+            pieceImage = null;
         }
     }
 
