@@ -22,4 +22,9 @@ public class Puzzle : MonoBehaviour
     {
         
     }
+
+    public void isMatching()
+    {
+
+    }
 }

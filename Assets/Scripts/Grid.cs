@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
-    Puzzle[,] puzzles;
+    public Puzzle[,] puzzles;
 
     [SerializeField, Tooltip("Size of the puzzle grid.")]
     int gridSizeX;
@@ -11,7 +11,7 @@ public class Grid : MonoBehaviour
     int gridSizeY;
 
     [SerializeField, Tooltip("Size of individual cell.")]
-    float cellSize;
+    public float cellSize;
 
     [SerializeField, Tooltip("PuzzleMap gameobject. This is very temporary solution.")]
     GameObject puzzleMap;
@@ -19,6 +19,8 @@ public class Grid : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        puzzles = new Puzzle[gridSizeX, gridSizeY];
+
         // Get all the pieces and assign them to array
         // This will change!!
         Puzzle[] pieces = puzzleMap.GetComponentsInChildren<Puzzle>();
@@ -26,6 +28,12 @@ public class Grid : MonoBehaviour
         {
             Vector2 pos = piece.transform.position;
             puzzles[(int)pos.x, (int)pos.y] = piece;
+
+            int x = Mathf.RoundToInt(pos.x / cellSize);
+            int y = Mathf.RoundToInt(pos.y / cellSize);
+
+            // Przypisz puzzel do siatki
+            puzzles[x, y] = piece;
         }
 
     }
