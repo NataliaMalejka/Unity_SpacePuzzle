@@ -3,22 +3,21 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float velocity;
-    private Rigidbody2D rb;    
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField] private int leftBorder;
+    [SerializeField] private int rightBorder;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.position = new Vector3(transform.position.x - 1, 6, -1);
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            transform.position = new Vector3(transform.position.x + 1, 6, -1);
-        }
-    } 
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        transform.Translate(horizontalInput * velocity * Time.deltaTime, 0, 0);
+
+        if(transform.position.x < leftBorder)
+            transform.position = new Vector3(leftBorder, transform.position.y, transform.position.z);
+
+        if (transform.position.x > rightBorder)
+            transform.position = new Vector3(rightBorder, transform.position.y, transform.position.z);
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0, 9), transform.position.y, transform.position.z);
+    }
+
 }
