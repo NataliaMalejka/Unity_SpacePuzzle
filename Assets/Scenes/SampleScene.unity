@@ -379,6 +379,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Piece
       objectReference: {fileID: 0}
+    - target: {fileID: 6030038990795062356, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
+      propertyPath: portable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7135362726482997528, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
       propertyPath: m_MaskInteraction
       value: 0
@@ -861,6 +865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 2
+  leftBorder: 4
+  rightBorder: 6
 --- !u!212 &998233098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -925,7 +931,7 @@ Transform:
   m_GameObject: {fileID: 998233094}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 6, z: -1}
+  m_LocalPosition: {x: 3.948, y: 6, z: -1}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

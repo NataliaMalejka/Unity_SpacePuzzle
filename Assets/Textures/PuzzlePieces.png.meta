@@ -232,8 +232,8 @@ TextureImporter:
       name: PuzzlePieces_6
       rect:
         serializedVersion: 2
-        x: 410
-        y: 342
+        x: 409
+        y: 343
         width: 150
         height: 183
       alignment: 9
