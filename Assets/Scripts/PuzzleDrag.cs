@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class PuzzleDrag : MonoBehaviour
 {
-    //selected puzzel
-    private GameObject selectedPiece; 
+    private GameObject selectedPiece;
     private GameObject pieceImage;
 
-    //position beetween mouse and puzzle
-    private Vector3 offset; 
+    private Vector3 offset;
     private float zPosition = 0f;
 
     private Vector3 startPosition;
@@ -28,51 +26,60 @@ public class PuzzleDrag : MonoBehaviour
 
     private void HandleMouseInput()
     {
-        //left button drag
-        if (Input.GetMouseButtonDown(0)) 
+        //Left Button
+        if (Input.GetMouseButtonDown(0))
         {
-            //camera view to world position
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            //Mouse Position To World Position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-            //correct object
-            if (hit.collider != null && hit.collider.CompareTag("Piece"))
+            //Collision Check
+            if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("Piece"))
             {
                 selectedPiece = hit.collider.gameObject;
-                offset = selectedPiece.transform.position - (Vector3)mousePosition;
+                offset = selectedPiece.transform.position - hit.point;
 
                 startPosition = selectedPiece.transform.position;
 
-                // grid position
+                //Grid Position
                 int startX = Mathf.RoundToInt(startPosition.x / grid.cellSize);
                 int startY = Mathf.RoundToInt(startPosition.y / grid.cellSize);
 
                 puzzle = grid.GetPuzzleFromGrid(startX, startY);
-                //select puzzel image
+
+                //Select Piece Image
                 pieceImage = selectedPiece.transform.GetChild(0).gameObject;
-                //higer layer
+
+                //Higer layer
                 SetOrderInLayer(selectedPiece, 1);
                 SetOrderInLayer(pieceImage, 1);
             }
         }
 
-        //move piece
+        //Move Piece
         if (selectedPiece != null)
         {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            selectedPiece.transform.position = new Vector3(mousePosition.x + offset.x, mousePosition.y + offset.y, zPosition);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Plane plane = new Plane(Vector3.forward, new Vector3(0, 0, zPosition)); 
+            float distance;
+
+            if (plane.Raycast(ray, out distance))
+            {
+                Vector3 mousePosition = ray.GetPoint(distance);
+                selectedPiece.transform.position = mousePosition + offset;
+            }
         }
 
-        //drop
+        //Put Piece
         if (Input.GetMouseButtonUp(0) && selectedPiece != null)
         {
             endPosition = selectedPiece.transform.position;
 
-            // endposition to grid
+            //Grid Position
             int endX = Mathf.RoundToInt(endPosition.x / grid.cellSize);
             int endY = Mathf.RoundToInt(endPosition.y / grid.cellSize);
 
-            // check grid
+            //Check Position
             if (endX >= 0 && endX < grid.puzzles.GetLength(0) &&
                 endY >= 0 && endY < grid.puzzles.GetLength(1) &&
                 grid.puzzles[endX, endY] != null)
@@ -90,8 +97,8 @@ public class PuzzleDrag : MonoBehaviour
                 selectedPiece.transform.position = new Vector3(endX * grid.cellSize, endY * grid.cellSize, zPosition);
             }
 
-            //lower layer
-            SetOrderInLayer(selectedPiece, 0); 
+            //Lower layer
+            SetOrderInLayer(selectedPiece, 0);
             SetOrderInLayer(pieceImage, 0);
             selectedPiece = null;
             pieceImage = null;
