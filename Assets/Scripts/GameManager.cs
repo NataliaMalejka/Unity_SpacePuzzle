@@ -1,16 +1,36 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject gameOverPanel;
+
+    private void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(gameOverPanel != null)
+                gameOverPanel.SetActive(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadCurrentLevel()
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void LoadSelectedLevel(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }
