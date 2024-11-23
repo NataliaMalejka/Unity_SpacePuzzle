@@ -13,10 +13,12 @@ public class PuzzleDrag : MonoBehaviour
 
     private Puzzle puzzle;
     private Grid grid;
+    private GameObject player;
 
     private void Start()
     {
         grid = FindObjectOfType<Grid>();
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
@@ -47,17 +49,25 @@ public class PuzzleDrag : MonoBehaviour
 
                 puzzle = grid.GetPuzzleFromGrid(startX, startY);
 
-                //Select Piece Image
-                pieceImage = selectedPiece.transform.GetChild(0).gameObject;
+                if ((puzzle.portable && (int)player.transform.position.x != (int)puzzle.transform.position.x)
+                    || (puzzle.portable && (int)player.transform.position.y != (int)puzzle.transform.position.y))
+                {
+                    //Select Piece Image
+                    pieceImage = selectedPiece.transform.GetChild(0).gameObject;
 
-                //Higer layer
-                SetOrderInLayer(selectedPiece, 1);
-                SetOrderInLayer(pieceImage, 1);
+                    //Higer layer
+                    SetOrderInLayer(selectedPiece, 1);
+                    SetOrderInLayer(pieceImage, 1);
+                }
+                else
+                {
+                    selectedPiece = null;
+                }
             }
         }
 
         //Move Piece
-        if (selectedPiece != null)
+        if (selectedPiece != null )
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Plane plane = new Plane(Vector3.forward, new Vector3(0, 0, zPosition)); 
@@ -71,7 +81,7 @@ public class PuzzleDrag : MonoBehaviour
         }
 
         //Put Piece
-        if (Input.GetMouseButtonUp(0) && selectedPiece != null)
+        if (Input.GetMouseButtonUp(0) && selectedPiece != null )
         {
             endPosition = selectedPiece.transform.position;
 

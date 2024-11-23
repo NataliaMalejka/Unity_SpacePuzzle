@@ -174,7 +174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connections: 00000000000000000000000000000000
   player: {fileID: 0}
-  portable: 0
+  portable: 1
+  alwasVisible: 0
 --- !u!65 &4346810474402980433
 BoxCollider:
   m_ObjectHideFlags: 0

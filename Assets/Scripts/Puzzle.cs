@@ -8,20 +8,30 @@ public class Puzzle : MonoBehaviour
 {
     [SerializeField, Tooltip("The type of connection on each side of the puzzle piece. (Can be either 'Hole' or 'Knob')")]
     Connection[] connections = new Connection[4];
+    
+    [SerializeField] public bool portable;
+    [SerializeField] private bool alwasVisible;
 
-    [SerializeField] private GameObject player;
-    [SerializeField] private bool portable;
+    private GameObject player;
+    private Vector3 playerPosition;
+    private Vector3 puzzlePosition;
+    private GameObject image;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        player = GameObject.FindWithTag("Player");
+        image = this.transform.GetChild(0).gameObject;
+        puzzlePosition = this.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        playerPosition = player.transform.position;
+
+        if((playerPosition.y == puzzlePosition.y && (playerPosition.x >= puzzlePosition.x -1 && playerPosition.x <= puzzlePosition.x +1)) || alwasVisible)
+            image.SetActive(true);
+        else
+            image.SetActive(false);
     }
 
     public void isMatching()
