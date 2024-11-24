@@ -13,9 +13,14 @@ public class Puzzle : MonoBehaviour
     const int UP = 2;
     const int DOWN = 3;
 
-    [SerializeField, Tooltip("The type of connection on each side of the puzzle piece. (Can be either 'Empty', 'Hole' or 'Knob')")]
+    //[SerializeField, Tooltip("The type of connection on each side of the puzzle piece. (Can be either 'Empty', 'Hole' or 'Knob')")]
     Connection[] connections;
-    
+
+    [SerializeField] private Connection left;
+    [SerializeField] private Connection right;
+    [SerializeField] private Connection up;
+    [SerializeField] private Connection down;
+
     [SerializeField] public bool portable;
     [SerializeField] private bool alwasVisible;
 
@@ -30,11 +35,13 @@ public class Puzzle : MonoBehaviour
         grid = GameObject.FindWithTag("Grid").GetComponent<Grid>();
         player = GameObject.FindWithTag("Player");
         image = this.transform.GetChild(0).gameObject;
-        puzzlePosition = this.transform.position;
+
+        connections = new Connection[] { left, right, up, down };
     }
 
     void FixedUpdate()
     {
+        puzzlePosition = this.transform.position;
         playerPosition = player.transform.position;
 
         if((playerPosition.y == puzzlePosition.y && (playerPosition.x >= puzzlePosition.x -1 && playerPosition.x <= puzzlePosition.x +1)) || alwasVisible)
