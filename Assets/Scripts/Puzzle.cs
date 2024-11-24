@@ -52,36 +52,49 @@ public class Puzzle : MonoBehaviour
 
     public bool FitsAt(int x, int y)
     {
+        Puzzle neighbour;
         //left
-        Puzzle neighbour = grid.GetPuzzleFromGrid(x-1, y);
-        if(neighbour != null)
+        if(x >= 1)
         {
-            if (!canConnect(connections[LEFT], neighbour.connections[RIGHT]))
-                return false;
+            neighbour = grid.GetPuzzleFromGrid(x - 1, y);
+            if (neighbour != null)
+            {
+                if (!canConnect(connections[LEFT], neighbour.connections[RIGHT]))
+                    return false;
+            }
         }
 
         //right
-        neighbour = grid.GetPuzzleFromGrid(x + 1, y);
-        if (neighbour != null)
+        if (x <= 8)
         {
-            if (!canConnect(connections[RIGHT], neighbour.connections[LEFT]))
-                return false;
+            neighbour = grid.GetPuzzleFromGrid(x + 1, y);
+            if (neighbour != null)
+            {
+                if (!canConnect(connections[RIGHT], neighbour.connections[LEFT]))
+                    return false;
+            }
         }
 
         //up
-        neighbour = grid.GetPuzzleFromGrid(x, y + 1);
-        if (neighbour != null)
+        if (y <= 8)
         {
-            if (!canConnect(connections[UP], neighbour.connections[DOWN]))
-                return false;
+            neighbour = grid.GetPuzzleFromGrid(x, y + 1);
+            if (neighbour != null)
+            {
+                if (!canConnect(connections[UP], neighbour.connections[DOWN]))
+                    return false;
+            }
         }
 
         //down
-        neighbour = grid.GetPuzzleFromGrid(x, y - 1);
-        if (neighbour != null)
+        if (y >= 1)
         {
-            if (!canConnect(connections[DOWN], neighbour.connections[UP]))
-                return false;     
+            neighbour = grid.GetPuzzleFromGrid(x, y - 1);
+            if (neighbour != null)
+            {
+                if (!canConnect(connections[DOWN], neighbour.connections[UP]))
+                    return false;
+            }
         }
 
         return true;
@@ -92,6 +105,8 @@ public class Puzzle : MonoBehaviour
         if (con1 == Connection.KNOB && con2 == Connection.HOLE)
             return true;
         if (con1 == Connection.HOLE && con2 == Connection.KNOB)
+            return true;
+        if (con1 == Connection.EMPTY && con2 == Connection.EMPTY)
             return true;
 
         return false;
