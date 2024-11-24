@@ -5,7 +5,6 @@ using UnityEngine;
 
 enum Connection {EMPTY, HOLE, KNOB};
 
-
 public class Puzzle : MonoBehaviour
 {
     const int LEFT = 0;
