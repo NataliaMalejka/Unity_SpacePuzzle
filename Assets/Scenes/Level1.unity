@@ -2146,7 +2146,7 @@ GameObject:
   - component: {fileID: 1484547463}
   m_Layer: 0
   m_Name: MyGrid
-  m_TagString: Untagged
+  m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2163,6 +2163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974d7c2038b03164db8240fbf5136e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bottomLeftCorner: {x: 4, y: 4}
   gridSizeX: 11
   gridSizeY: 11
   cellSize: 1

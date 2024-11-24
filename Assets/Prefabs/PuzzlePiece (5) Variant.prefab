@@ -20,6 +20,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -502112790, guid: d88381868633dcd45af7c1665aa7d2d7, type: 3}
+    - target: {fileID: 6030038990795062356, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
+      propertyPath: 'connections.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6030038990795062356, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
+      propertyPath: 'connections.Array.data[1]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6030038990795062356, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
+      propertyPath: 'connections.Array.data[2]'
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7135362726482997528, guid: 10f0eedaf1f93984bbabd96055279512, type: 3}
       propertyPath: m_Sprite
       value: 

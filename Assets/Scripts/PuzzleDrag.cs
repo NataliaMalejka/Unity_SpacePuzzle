@@ -15,6 +15,9 @@ public class PuzzleDrag : MonoBehaviour
     private Grid grid;
     private GameObject player;
 
+    private int startX;
+    private int startY;
+
     private void Start()
     {
         grid = FindObjectOfType<Grid>();
@@ -44,10 +47,12 @@ public class PuzzleDrag : MonoBehaviour
                 startPosition = selectedPiece.transform.position;
 
                 //Grid Position
-                int startX = Mathf.RoundToInt(startPosition.x / grid.cellSize);
-                int startY = Mathf.RoundToInt(startPosition.y / grid.cellSize);
+                startX = Mathf.RoundToInt(startPosition.x / grid.cellSize);
+                startY = Mathf.RoundToInt(startPosition.y / grid.cellSize);
 
+                //Get the puzzle and remove it from the grid for now
                 puzzle = grid.GetPuzzleFromGrid(startX, startY);
+                grid.SetPuzzle(null, startX, startY);
 
                 if ((puzzle.portable && (int)player.transform.position.x != (int)puzzle.transform.position.x)
                     || (puzzle.portable && (int)player.transform.position.y != (int)puzzle.transform.position.y))
@@ -55,7 +60,7 @@ public class PuzzleDrag : MonoBehaviour
                     //Select Piece Image
                     pieceImage = selectedPiece.transform.GetChild(0).gameObject;
 
-                    //Higer layer
+                    //Higher layer
                     SetOrderInLayer(selectedPiece, 1);
                     SetOrderInLayer(pieceImage, 1);
                 }
@@ -89,21 +94,24 @@ public class PuzzleDrag : MonoBehaviour
             int endX = Mathf.RoundToInt(endPosition.x / grid.cellSize);
             int endY = Mathf.RoundToInt(endPosition.y / grid.cellSize);
 
-            //Check Position
-            if (endX >= 0 && endX < grid.puzzles.GetLength(0) &&
-                endY >= 0 && endY < grid.puzzles.GetLength(1) &&
-                grid.puzzles[endX, endY] != null)
+            //Check if already occupied
+            if (grid.GetPuzzleFromGrid(endX, endY) != null)
             {
                 selectedPiece.transform.position = startPosition;
+                grid.SetPuzzle(selectedPiece.GetComponent<Puzzle>(), startX, startY);
             }
+
+            //Check if the puzzle doesn't fit
+            else if(!selectedPiece.GetComponent<Puzzle>().FitsAt(endX, endY))
+            {
+                selectedPiece.transform.position = startPosition;
+                grid.SetPuzzle(selectedPiece.GetComponent<Puzzle>(), startX, startY);
+            }
+
+            //Success
             else
             {
-                int startX = Mathf.RoundToInt(startPosition.x / grid.cellSize);
-                int startY = Mathf.RoundToInt(startPosition.y / grid.cellSize);
-
-                grid.puzzles[startX, startY] = null;
-                grid.puzzles[endX, endY] = puzzle;
-
+                grid.SetPuzzle(puzzle, endX, endY);
                 selectedPiece.transform.position = new Vector3(endX * grid.cellSize, endY * grid.cellSize, zPosition);
             }
 
