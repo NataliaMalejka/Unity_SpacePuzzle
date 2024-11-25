@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
                     transform.position = new Vector3(rightBorder, transform.position.y, transform.position.z);
 
                 transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0, 9), transform.position.y, transform.position.z);
+                transform.localScale = new Vector3(3 * horizontalInput, 3, 1);
             }
         }
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor.UI;
@@ -24,16 +25,26 @@ public class Puzzle : MonoBehaviour
     [SerializeField] private bool alwasVisible;
 
     private Grid grid;
+    private int gridSizeX;
+    private int gridSizeY;
     private GameObject player;
     private Vector3 playerPosition;
     private Vector3 puzzlePosition;
-    private GameObject image;
+    private GameObject[] children;
 
     void Start()
     {
         grid = GameObject.FindWithTag("Grid").GetComponent<Grid>();
         player = GameObject.FindWithTag("Player");
-        image = this.transform.GetChild(0).gameObject;
+
+        gridSizeX = grid.GetGridSizeX();
+        gridSizeY = grid.GetGridSizeY();
+
+        children = new GameObject[this.transform.childCount];
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            children[i] = this.transform.GetChild(i).gameObject;
+        }
 
         connections = new Connection[] { left, right, up, down };
     }
@@ -43,10 +54,19 @@ public class Puzzle : MonoBehaviour
         puzzlePosition = this.transform.position;
         playerPosition = player.transform.position;
 
-        if((playerPosition.y == puzzlePosition.y && (playerPosition.x >= puzzlePosition.x -1 && playerPosition.x <= puzzlePosition.x +1)) || alwasVisible)
-            image.SetActive(true);
+        bool isNearby = Mathf.Abs(playerPosition.y - puzzlePosition.y) < 0.1f && Mathf.Abs(playerPosition.x - puzzlePosition.x) <= 1.0f;
+
+        if (isNearby || alwasVisible)
+        {
+            foreach(GameObject child in children)
+                child.SetActive(true);
+        }
         else
-            image.SetActive(false);
+        {
+            foreach (GameObject child in children)
+                child.SetActive(false);
+        }
+            
     }
 
     public bool FitsAt(int x, int y)
@@ -64,7 +84,7 @@ public class Puzzle : MonoBehaviour
         }
 
         //right
-        if (x <= 8)
+        if (x <= gridSizeX - 2)
         {
             neighbour = grid.GetPuzzleFromGrid(x + 1, y);
             if (neighbour != null)
@@ -75,7 +95,7 @@ public class Puzzle : MonoBehaviour
         }
 
         //up
-        if (y <= 8)
+        if (y <= gridSizeX - 2)
         {
             neighbour = grid.GetPuzzleFromGrid(x, y + 1);
             if (neighbour != null)

@@ -72,4 +72,14 @@ public class Grid : MonoBehaviour
     {
         puzzles[x, y] = puzzle;
     }
+
+    public int GetGridSizeX()
+    {
+        return gridSizeX;
+    }
+
+    public int GetGridSizeY()
+    {
+        return gridSizeY;
+    }
 }

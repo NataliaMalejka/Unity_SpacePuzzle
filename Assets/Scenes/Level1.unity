@@ -755,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7781200510152215690, guid: 1e6b65ec72dec8749b742d01571903ef, type: 3}
       propertyPath: left
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2025,15 +2025,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 282815716784291353, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
       propertyPath: up
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 282815716784291353, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
-      propertyPath: left
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 282815716784291353, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
+      propertyPath: down
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 282815716784291353, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
+      propertyPath: left
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 282815716784291353, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
       propertyPath: right
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6820025745341059622, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
       propertyPath: m_Name
@@ -2572,6 +2576,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 297552659533962294, guid: f4823ec86979b9f4d86e5538485b42ee, type: 3}
       propertyPath: down
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 297552659533962294, guid: f4823ec86979b9f4d86e5538485b42ee, type: 3}
+      propertyPath: left
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 297552659533962294, guid: f4823ec86979b9f4d86e5538485b42ee, type: 3}
+      propertyPath: right
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 297552659533962294, guid: f4823ec86979b9f4d86e5538485b42ee, type: 3}
@@ -2662,8 +2674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974d7c2038b03164db8240fbf5136e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSizeX: 11
-  gridSizeY: 11
+  gridSizeX: 20
+  gridSizeY: 20
   cellSize: 1
   puzzleMap: {fileID: 499800208}
 --- !u!4 &1484547464
@@ -2921,11 +2933,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7685960582501357658, guid: ba853baf42ea72b46822cf055668fcf6, type: 3}
       propertyPath: up
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685960582501357658, guid: ba853baf42ea72b46822cf055668fcf6, type: 3}
+      propertyPath: down
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7685960582501357658, guid: ba853baf42ea72b46822cf055668fcf6, type: 3}
       propertyPath: right
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3185,15 +3201,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 282815716784291353, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
       propertyPath: up
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 282815716784291353, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
       propertyPath: down
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 282815716784291353, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
+      propertyPath: left
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 282815716784291353, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
       propertyPath: right
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6820025745341059622, guid: df41e2492925fae4fb385f4fb2e8d93c, type: 3}
       propertyPath: m_Name
