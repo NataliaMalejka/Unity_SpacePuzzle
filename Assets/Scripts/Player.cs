@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
         if (Physics.Raycast(ray, out raycastHit) && horizontalInput != 0)
         {
-            if (raycastHit.transform.gameObject.CompareTag("Piece") || raycastHit.transform.gameObject.CompareTag("Door"))
+            if (raycastHit.transform.gameObject.CompareTag("Piece") || raycastHit.transform.gameObject.CompareTag("Door") || raycastHit.transform.gameObject.CompareTag("Rocket"))
             {
                 transform.Translate(horizontalInput * velocity * Time.deltaTime, 0, 0);
 

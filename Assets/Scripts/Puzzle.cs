@@ -13,7 +13,6 @@ public class Puzzle : MonoBehaviour
     const int UP = 2;
     const int DOWN = 3;
 
-    //[SerializeField, Tooltip("The type of connection on each side of the puzzle piece. (Can be either 'Empty', 'Hole' or 'Knob')")]
     Connection[] connections;
 
     [SerializeField] private Connection left;
@@ -58,7 +57,7 @@ public class Puzzle : MonoBehaviour
 
         if (isNearby || alwasVisible)
         {
-            foreach(GameObject child in children)
+            foreach (GameObject child in children)
                 child.SetActive(true);
         }
         else

@@ -8,6 +8,7 @@ TagManager:
   - SoundsManager
   - Grid
   - Door
+  - Rocket
   layers:
   - Default
   - TransparentFX

@@ -54,9 +54,6 @@ public class PuzzleDrag : MonoBehaviour
                 puzzle = grid.GetPuzzleFromGrid(startX, startY);
                 grid.SetPuzzle(null, startX, startY);
 
-                Debug.Log(puzzle.transform.position.x + " " + puzzle.transform.position.y);
-                Debug.Log(player.transform.position.x + " " + player.transform.position.y);
-
                 if ((puzzle.portable && (int)player.transform.position.x != (int)puzzle.transform.position.x)
                     || (puzzle.portable && (int)player.transform.position.y != (int)puzzle.transform.position.y))
                 {
