@@ -11,6 +11,7 @@ public class PuzzleDrag : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 endPosition;
 
+    private SoundsManager soundManager;
     private Puzzle puzzle;
     private Grid grid;
     private GameObject player;
@@ -20,6 +21,7 @@ public class PuzzleDrag : MonoBehaviour
 
     private void Start()
     {
+        soundManager = FindObjectOfType<SoundsManager>();
         grid = FindObjectOfType<Grid>();
         player = GameObject.FindWithTag("Player");
     }
@@ -57,6 +59,7 @@ public class PuzzleDrag : MonoBehaviour
                 if ((puzzle.portable && (int)player.transform.position.x != (int)puzzle.transform.position.x)
                     || (puzzle.portable && (int)player.transform.position.y != (int)puzzle.transform.position.y))
                 {
+                    soundManager.PlaySound(SoundsManager.Sounds.TakePuzzle);
                     //Select Piece Image
                     pieceImage = selectedPiece.transform.GetChild(0).gameObject;
 
@@ -90,6 +93,7 @@ public class PuzzleDrag : MonoBehaviour
         //Put Piece
         if (Input.GetMouseButtonUp(0) && selectedPiece != null )
         {
+            soundManager.PlaySound(SoundsManager.Sounds.PutPuzzle); 
             endPosition = selectedPiece.transform.position;
 
             //Grid Position

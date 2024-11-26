@@ -4,11 +4,13 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject connectedDoor;
 
+    private SoundsManager soundManager;
     private GameObject player;
     private bool playerInRange;
 
     private void Start()
     {
+        soundManager = FindObjectOfType<SoundsManager>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -16,6 +18,7 @@ public class Door : MonoBehaviour
     {
         if(playerInRange && Input.GetKeyDown(KeyCode.E))
         {
+            soundManager.PlaySound(SoundsManager.Sounds.OpenDoor);
             player.transform.position = connectedDoor.transform.position;
         }
     }
