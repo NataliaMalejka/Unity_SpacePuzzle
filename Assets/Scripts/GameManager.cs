@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
 
     private bool activeWinPanel = false;
     public float time;
-
     private SoundsManager soundsManager;
 
     private void Start()
