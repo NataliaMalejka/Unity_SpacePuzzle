@@ -1531,12 +1531,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889726d38f7efae458bf06193a27bbb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OpenDoor: {fileID: 0}
-  TimerStop: {fileID: 0}
-  TakePuzzle: {fileID: 0}
-  PutPuzzle: {fileID: 0}
-  Finish: {fileID: 0}
-  BackgroundMusic: {fileID: 0}
+  OpenDoor: {fileID: 8300000, guid: 7801e652cfba149479d9d965a4567848, type: 3}
+  TimerStop: {fileID: 8300000, guid: 04e8166178be4ab4dafce713c7812084, type: 3}
+  TakePuzzle: {fileID: 8300000, guid: 47ec76a59f67c9843b19ca895b70980e, type: 3}
+  PutPuzzle: {fileID: 8300000, guid: 47ec76a59f67c9843b19ca895b70980e, type: 3}
+  Finish: {fileID: 8300000, guid: fa7084c85e3c52049ac525cf2e171b5d, type: 3}
+  BackgroundMusic: {fileID: 8300000, guid: 031f9d3df84d98c41b594afe806e1a37, type: 3}
 --- !u!4 &854433048
 Transform:
   m_ObjectHideFlags: 0
@@ -3844,7 +3844,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 654507469}
   winPanel: {fileID: 0}
   timeText: {fileID: 1299013606}
-  time: 5
+  time: 10
 --- !u!1001 &7034410634475090639
 PrefabInstance:
   m_ObjectHideFlags: 0

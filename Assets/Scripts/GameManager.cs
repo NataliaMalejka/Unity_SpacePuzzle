@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (time != 0 && timeText != null)
+        if (time != 0 && timeText != null && !activeWinPanel)
         {
             time -= Time.deltaTime;
             timeText.text = "Time: " + Mathf.Clamp(Mathf.CeilToInt(time), 0, int.MaxValue).ToString();
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowWinPanel()
     {
-        soundsManager.PlaySound(SoundsManager.Sounds.Finish);
+        //soundsManager.PlaySound(SoundsManager.Sounds.Finish);
 
         if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
         {
