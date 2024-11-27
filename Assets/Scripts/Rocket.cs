@@ -13,8 +13,9 @@ public class Rocket : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && playerCollision)
+        if(Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log(playerCollision);
             gameManager.ShowWinPanel();
         }
     }

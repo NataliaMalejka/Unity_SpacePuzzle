@@ -149,9 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 453702841}
-  winPanel: {fileID: 0}
+  winPanel: {fileID: 453702841}
   timeText: {fileID: 1743573612}
-  time: 10
+  time: 40
 --- !u!4 &95851454
 Transform:
   m_ObjectHideFlags: 0
@@ -2851,8 +2851,8 @@ Camera:
   m_GameObject: {fileID: 1903239123}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.072401404, g: 0.16824317, b: 0.3188517, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2877,7 +2877,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2902,7 +2902,7 @@ Transform:
   m_GameObject: {fileID: 1903239123}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.68, y: 4.78, z: -21.01}
+  m_LocalPosition: {x: 5.68, y: 5.38, z: -21.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3401,12 +3401,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 95851454}
+  - {fileID: 104007253}
   - {fileID: 1903239128}
   - {fileID: 1438961022}
   - {fileID: 253965317}
-  - {fileID: 289186275}
   - {fileID: 1574910433}
   - {fileID: 1192474079}
-  - {fileID: 104007253}
   - {fileID: 1099050157}
   - {fileID: 1957114059}
+  - {fileID: 289186275}
