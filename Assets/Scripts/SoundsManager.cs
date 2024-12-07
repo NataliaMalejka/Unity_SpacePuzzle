@@ -7,6 +7,7 @@ public class SoundsManager : MonoBehaviour
     [SerializeField] AudioClip OpenDoor;
     [SerializeField] AudioClip TimerStop;
     [SerializeField] AudioClip TakePuzzle;
+    [SerializeField] AudioClip Error;
     [SerializeField] AudioClip PutPuzzle;
     [SerializeField] AudioClip Finish;
     [SerializeField] AudioClip BackgroundMusic;
@@ -18,6 +19,7 @@ public class SoundsManager : MonoBehaviour
         OpenDoor,
         TimerStop,
         TakePuzzle,
+        Error,
         PutPuzzle,
         Finish,
         BackgroundMusic
@@ -54,6 +56,9 @@ public class SoundsManager : MonoBehaviour
                 break;
             case Sounds.PutPuzzle:
                 audioSource.PlayOneShot(PutPuzzle);
+                break;
+            case Sounds.Error:
+                audioSource.PlayOneShot(Error);
                 break;
             case Sounds.Finish:
                 audioSource.PlayOneShot(Finish);

@@ -55,6 +55,7 @@ public class PuzzleDrag : MonoBehaviour
                 //Get the puzzle and remove it from the grid for now
                 puzzle = grid.GetPuzzleFromGrid(startX, startY);
                 grid.SetPuzzle(null, startX, startY);
+                puzzle.isPlaced = false;
 
                 if ((puzzle.portable && (int)player.transform.position.x != (int)puzzle.transform.position.x)
                     || (puzzle.portable && (int)player.transform.position.y != (int)puzzle.transform.position.y))
@@ -69,7 +70,9 @@ public class PuzzleDrag : MonoBehaviour
                 }
                 else
                 {
+                    soundManager.PlaySound(SoundsManager.Sounds.Error);
                     selectedPiece.transform.position = startPosition;
+                    puzzle.isPlaced = true;
                     grid.SetPuzzle(selectedPiece.GetComponent<Puzzle>(), startX, startY);
                     selectedPiece = null;
                 }
@@ -124,6 +127,7 @@ public class PuzzleDrag : MonoBehaviour
             //Lower layer
             SetOrderInLayer(selectedPiece, 0);
             SetOrderInLayer(pieceImage, 0);
+            puzzle.isPlaced = true;
             selectedPiece = null;
             pieceImage = null;
         }

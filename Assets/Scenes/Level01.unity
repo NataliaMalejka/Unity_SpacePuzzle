@@ -420,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5657892497464650393, guid: 78f6d5d0682881f40808b3b7ecc367f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5657892497464650393, guid: 78f6d5d0682881f40808b3b7ecc367f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -956,7 +956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1140391966458066574, guid: 1e6b65ec72dec8749b742d01571903ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1140391966458066574, guid: 1e6b65ec72dec8749b742d01571903ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1265,7 +1265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4044127726135369186, guid: 54c52c2601855574681be01e75e836e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4044127726135369186, guid: 54c52c2601855574681be01e75e836e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1340,7 +1340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7717832446370577544, guid: b12b8bbf1b84f5140a11c91fab6a37a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7717832446370577544, guid: b12b8bbf1b84f5140a11c91fab6a37a7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1620,11 +1620,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1140391966458066574, guid: 1e6b65ec72dec8749b742d01571903ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1140391966458066574, guid: 1e6b65ec72dec8749b742d01571903ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1140391966458066574, guid: 1e6b65ec72dec8749b742d01571903ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2053,7 +2053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1140391966458066574, guid: 1e6b65ec72dec8749b742d01571903ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1140391966458066574, guid: 1e6b65ec72dec8749b742d01571903ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2138,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4551705161365339992, guid: de778e45dd6e30a4c949d03150e8cb26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4551705161365339992, guid: de778e45dd6e30a4c949d03150e8cb26, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2379,6 +2379,7 @@ MonoBehaviour:
   OpenDoor: {fileID: 8300000, guid: 7801e652cfba149479d9d965a4567848, type: 3}
   TimerStop: {fileID: 8300000, guid: 04e8166178be4ab4dafce713c7812084, type: 3}
   TakePuzzle: {fileID: 8300000, guid: 47ec76a59f67c9843b19ca895b70980e, type: 3}
+  Error: {fileID: 8300000, guid: 7a8ce745c612e5640acd0af997939430, type: 3}
   PutPuzzle: {fileID: 8300000, guid: 47ec76a59f67c9843b19ca895b70980e, type: 3}
   Finish: {fileID: 8300000, guid: fa7084c85e3c52049ac525cf2e171b5d, type: 3}
   BackgroundMusic: {fileID: 8300000, guid: 031f9d3df84d98c41b594afe806e1a37, type: 3}
@@ -2389,6 +2390,72 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574910430}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1586511701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586511703}
+  - component: {fileID: 1586511702}
+  m_Layer: 0
+  m_Name: background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!328 &1586511702
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586511701}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 65c728753f031dc44b86e38b0ddcbf43, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 1903239127}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 0
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
+  m_Url: 
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!4 &1586511703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586511701}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -3145,7 +3212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 980565070440760280, guid: 12e7c8db6025cc94ca4a604c9b5b8653, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 980565070440760280, guid: 12e7c8db6025cc94ca4a604c9b5b8653, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3410,3 +3477,4 @@ SceneRoots:
   - {fileID: 1099050157}
   - {fileID: 1957114059}
   - {fileID: 289186275}
+  - {fileID: 1586511703}
