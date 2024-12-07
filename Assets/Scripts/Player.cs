@@ -20,14 +20,14 @@ public class Player : MonoBehaviour
             if (raycastHit.transform.gameObject.CompareTag("Piece") || raycastHit.transform.gameObject.CompareTag("Door") || raycastHit.transform.gameObject.CompareTag("Rocket"))
             {
                 transform.Translate(horizontalInput * velocity * Time.deltaTime, 0, 0);
-
+                
                 if (transform.position.x < leftBorder)
                     transform.position = new Vector3(leftBorder, transform.position.y, transform.position.z);
 
                 if (transform.position.x > rightBorder)
                     transform.position = new Vector3(rightBorder, transform.position.y, transform.position.z);
-
-                transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0, 9), transform.position.y, transform.position.z);
+                
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftBorder, rightBorder), transform.position.y, transform.position.z);
                 transform.localScale = new Vector3(3 * horizontalInput, 3, 1);
             }
         }
