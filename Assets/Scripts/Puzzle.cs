@@ -31,6 +31,8 @@ public class Puzzle : MonoBehaviour
     private Vector3 puzzlePosition;
     private GameObject[] children;
 
+    public bool isPlaced = true;
+
     void Start()
     {
         grid = GameObject.FindWithTag("Grid").GetComponent<Grid>();
@@ -55,7 +57,7 @@ public class Puzzle : MonoBehaviour
 
         bool isNearby = Mathf.Abs(playerPosition.y - puzzlePosition.y) < 0.1f && Mathf.Abs(playerPosition.x - puzzlePosition.x) <= 1.0f;
 
-        if (isNearby || alwasVisible)
+        if ((isNearby || alwasVisible) && isPlaced)
         {
             foreach (GameObject child in children)
                 child.SetActive(true);

@@ -4,11 +4,13 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     private GameManager gameManager;
+    private SoundsManager soundManager;
 
     private bool playerCollision = false;
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        soundManager = FindObjectOfType<SoundsManager>();
     }
 
     private void Update()
@@ -17,6 +19,7 @@ public class Rocket : MonoBehaviour
         {
             Debug.Log(playerCollision);
             gameManager.ShowWinPanel();
+            soundManager.PlaySound(SoundsManager.Sounds.Finish);
         }
     }
 

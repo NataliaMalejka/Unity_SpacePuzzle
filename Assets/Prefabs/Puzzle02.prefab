@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 106369231383022553, guid: 54c52c2601855574681be01e75e836e4, type: 3}
       propertyPath: m_Name
-      value: Puzzle0002 Variant
+      value: Puzzle02
       objectReference: {fileID: 0}
     - target: {fileID: 3467489790443137358, guid: 54c52c2601855574681be01e75e836e4, type: 3}
       propertyPath: m_Sprite
@@ -18,11 +18,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f52139b5894dfaf4691dc33788dd189d, type: 3}
     - target: {fileID: 4044127726135369186, guid: 54c52c2601855574681be01e75e836e4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.08
+      value: 0.0762
       objectReference: {fileID: 0}
     - target: {fileID: 4044127726135369186, guid: 54c52c2601855574681be01e75e836e4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.08
+      value: 0.0762
       objectReference: {fileID: 0}
     - target: {fileID: 4044127726135369186, guid: 54c52c2601855574681be01e75e836e4, type: 3}
       propertyPath: m_LocalPosition.x
