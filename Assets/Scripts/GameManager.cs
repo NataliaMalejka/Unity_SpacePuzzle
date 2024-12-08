@@ -70,6 +70,12 @@ public class GameManager : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene(0);
+        Debug.Log("load");
+    }
+
+    public void loadScene1()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
