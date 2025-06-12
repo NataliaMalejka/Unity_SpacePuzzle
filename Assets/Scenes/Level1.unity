@@ -1534,6 +1534,7 @@ MonoBehaviour:
   OpenDoor: {fileID: 8300000, guid: 7801e652cfba149479d9d965a4567848, type: 3}
   TimerStop: {fileID: 8300000, guid: 04e8166178be4ab4dafce713c7812084, type: 3}
   TakePuzzle: {fileID: 8300000, guid: 47ec76a59f67c9843b19ca895b70980e, type: 3}
+  Error: {fileID: 0}
   PutPuzzle: {fileID: 8300000, guid: 47ec76a59f67c9843b19ca895b70980e, type: 3}
   Finish: {fileID: 8300000, guid: fa7084c85e3c52049ac525cf2e171b5d, type: 3}
   BackgroundMusic: {fileID: 8300000, guid: 031f9d3df84d98c41b594afe806e1a37, type: 3}
@@ -2556,6 +2557,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 499800209}
     m_Modifications:
+    - target: {fileID: 1118426653551063860, guid: 54a8fbd424f569345a550e48ee99d8fe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3474285887918262366, guid: 54a8fbd424f569345a550e48ee99d8fe, type: 3}
       propertyPath: up
       value: 0
@@ -2611,6 +2616,10 @@ PrefabInstance:
     - target: {fileID: 6059655194361360986, guid: 54a8fbd424f569345a550e48ee99d8fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636449194405070582, guid: 54a8fbd424f569345a550e48ee99d8fe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7889882921044337761, guid: 54a8fbd424f569345a550e48ee99d8fe, type: 3}
       propertyPath: m_Name
